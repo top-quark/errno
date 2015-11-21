@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Errno</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+        <meta name="author" content="Christopher Williams">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"-->
+        <style type="text/css">
+        BODY {
+            padding-top: 70px;
+        }
+        #json {
+            height: 218px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        #txt {
+            height: 320px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        PRE.errno {
+            height: 370px;
+            background-image: url(/images/little_hal.jpg);
+            background-origin: border-box;
+            background-repeat: no-repeat;
+            padding-left: 132px;
+        }
+        .hdr {
+            background-color: #444;
+            color: white;
+            margin-bottom: 5px;
+            padding: 0.25em;
+        }
+        #txt DIV {
+            padding: 0.25em;
+        }
+        </style>
+    </head>
+    <body>
+        <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-home"></span> UsefulJS</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">$osName<b class="caret"></b></a>
+                        <ul class="dropdown-menu">$menu</ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h2>Error number reference</h2>
+            <div class="alert alert-info"><p>Are you tired of grepping /usr/include to figure out
+            what that system error number means? Here's a handy guide to all the errno values
+            for your system. Use your browser search functionality to find the one you're looking for
+            or just scroll down the table.</p>
+            <p>You are viewing the error codes for $osName; if you want to view the error
+            codes for a different operating system, select it from the dropdown menu.</div>
+            <pre class="errno">$html</pre>
+            <h2>JSON interface</h2>
+            <p>To load the error information as JSON, use:<br>
+            <a href="$path/$osId/json">$path/$osId/json</a></p>
+            <pre id="json">$json</pre>
+            <p>For JSONP, add a callback value as a query parameter:<br>
+            <a href="$path/$osId/json?callback=myCallback">$path/$osId/json?callback=myCallback</a></p>
+        </div>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    </body>
+</html>

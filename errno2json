@@ -1,0 +1,49 @@
+#!/usr/bin/perl
+# Converts error number definitions into JSON
+
+use strict;
+use warnings qw/all/;
+use JSON;
+
+# errno.h is typically a whole bunch of other includes; rather than trying to process
+# it ourselves, let's get the C-preprocessor to tell us where the includes are
+my $child;
+open($child, "-|", "echo '#include <errno.h>' | gcc -E -") // die("Can't exec gcc: $!");
+my @includes;
+while(<$child>) {
+    if (/^# \d* "(\/[^"]*errno[^"]*)" 1/) {
+        # For example:
+        # 1 "/usr/include/errno.h" 1 3 4
+        # The 1 after the filename means "new file"
+        push(@includes, $1);
+    } 
+}
+my @errno;
+my %no = ();
+my ($fh, $line);
+for my $inc (@includes) {
+    open($fh, "<", $inc) or die("Unable to read $inc: $!");
+    while ($line = <$fh>) {
+        if ($line =~ /^#define\s*([A-Z]*)\s*(\d*)\s*\/\*\s*([^\*]*)\*/) {
+            my ($const, $val, $desc) = ($1, $2 + 0, $3);
+            # Lose whitespace from the end of the description field
+            $desc =~ s/\s*$//;
+            $no{$const} = $val;
+            push(@errno, { const => $const, errno => $val, desc => $desc });
+        }
+        elsif ($line =~ /^#define\s*([A-Z]*)\s*([A-Z]*)\s*\/\*\s*([^\*]*)\*/) {
+            # For example:
+            #define EWOULDBLOCK     EAGAIN  /* Operation would block */
+            my ($const, $val, $desc) = ($1, $2, $3);
+            if (exists($no{$val})) {
+                # Resolve the errno
+                $val = $no{$val};
+                $desc =~ s/\s*$//;
+                push(@errno, { const => $const, errno => $val, desc => $desc });
+            }
+        }
+    }
+    close($fh);
+}
+@errno = sort { $a->{errno} <=> $b->{errno} } @errno;
+print(to_json(\@errno, { pretty => 1 }));

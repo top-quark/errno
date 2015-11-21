@@ -1,0 +1,632 @@
+[
+   {
+      "const" : "EPERM",
+      "desc" : "Operation not permitted",
+      "errno" : 1
+   },
+   {
+      "const" : "ENOENT",
+      "desc" : "No such file or directory",
+      "errno" : 2
+   },
+   {
+      "const" : "ESRCH",
+      "desc" : "No such process",
+      "errno" : 3
+   },
+   {
+      "const" : "EINTR",
+      "desc" : "Interrupted system call",
+      "errno" : 4
+   },
+   {
+      "const" : "EIO",
+      "desc" : "I/O error",
+      "errno" : 5
+   },
+   {
+      "const" : "ENXIO",
+      "desc" : "No such device or address",
+      "errno" : 6
+   },
+   {
+      "const" : "ENOEXEC",
+      "desc" : "Exec format error",
+      "errno" : 8
+   },
+   {
+      "const" : "EBADF",
+      "desc" : "Bad file number",
+      "errno" : 9
+   },
+   {
+      "const" : "ECHILD",
+      "desc" : "No child processes",
+      "errno" : 10
+   },
+   {
+      "const" : "EAGAIN",
+      "desc" : "Try again",
+      "errno" : 11
+   },
+   {
+      "const" : "ENOMEM",
+      "desc" : "Out of memory",
+      "errno" : 12
+   },
+   {
+      "const" : "EACCES",
+      "desc" : "Permission denied",
+      "errno" : 13
+   },
+   {
+      "const" : "EFAULT",
+      "desc" : "Bad address",
+      "errno" : 14
+   },
+   {
+      "const" : "ENOTBLK",
+      "desc" : "Block device required",
+      "errno" : 15
+   },
+   {
+      "const" : "EBUSY",
+      "desc" : "Device or resource busy",
+      "errno" : 16
+   },
+   {
+      "const" : "EEXIST",
+      "desc" : "File exists",
+      "errno" : 17
+   },
+   {
+      "const" : "EXDEV",
+      "desc" : "Cross-device link",
+      "errno" : 18
+   },
+   {
+      "const" : "ENODEV",
+      "desc" : "No such device",
+      "errno" : 19
+   },
+   {
+      "const" : "ENOTDIR",
+      "desc" : "Not a directory",
+      "errno" : 20
+   },
+   {
+      "const" : "EISDIR",
+      "desc" : "Is a directory",
+      "errno" : 21
+   },
+   {
+      "const" : "EINVAL",
+      "desc" : "Invalid argument",
+      "errno" : 22
+   },
+   {
+      "const" : "ENFILE",
+      "desc" : "File table overflow",
+      "errno" : 23
+   },
+   {
+      "const" : "EMFILE",
+      "desc" : "Too many open files",
+      "errno" : 24
+   },
+   {
+      "const" : "ENOTTY",
+      "desc" : "Not a typewriter",
+      "errno" : 25
+   },
+   {
+      "const" : "ETXTBSY",
+      "desc" : "Text file busy",
+      "errno" : 26
+   },
+   {
+      "const" : "EFBIG",
+      "desc" : "File too large",
+      "errno" : 27
+   },
+   {
+      "const" : "ENOSPC",
+      "desc" : "No space left on device",
+      "errno" : 28
+   },
+   {
+      "const" : "ESPIPE",
+      "desc" : "Illegal seek",
+      "errno" : 29
+   },
+   {
+      "const" : "EROFS",
+      "desc" : "Read-only file system",
+      "errno" : 30
+   },
+   {
+      "const" : "EMLINK",
+      "desc" : "Too many links",
+      "errno" : 31
+   },
+   {
+      "const" : "EPIPE",
+      "desc" : "Broken pipe",
+      "errno" : 32
+   },
+   {
+      "const" : "EDOM",
+      "desc" : "Math argument out of domain of func",
+      "errno" : 33
+   },
+   {
+      "const" : "ERANGE",
+      "desc" : "Math result not representable",
+      "errno" : 34
+   },
+   {
+      "const" : "EDEADLK",
+      "desc" : "Resource deadlock would occur",
+      "errno" : 35
+   },
+   {
+      "const" : "ENAMETOOLONG",
+      "desc" : "File name too long",
+      "errno" : 36
+   },
+   {
+      "const" : "ENOLCK",
+      "desc" : "No record locks available",
+      "errno" : 37
+   },
+   {
+      "const" : "ENOSYS",
+      "desc" : "Invalid system call number",
+      "errno" : 38
+   },
+   {
+      "const" : "ENOTEMPTY",
+      "desc" : "Directory not empty",
+      "errno" : 39
+   },
+   {
+      "const" : "ELOOP",
+      "desc" : "Too many symbolic links encountered",
+      "errno" : 40
+   },
+   {
+      "const" : "ENOMSG",
+      "desc" : "No message of desired type",
+      "errno" : 42
+   },
+   {
+      "const" : "EIDRM",
+      "desc" : "Identifier removed",
+      "errno" : 43
+   },
+   {
+      "const" : "ECHRNG",
+      "desc" : "Channel number out of range",
+      "errno" : 44
+   },
+   {
+      "const" : "ELNRNG",
+      "desc" : "Link number out of range",
+      "errno" : 48
+   },
+   {
+      "const" : "EUNATCH",
+      "desc" : "Protocol driver not attached",
+      "errno" : 49
+   },
+   {
+      "const" : "ENOCSI",
+      "desc" : "No CSI structure available",
+      "errno" : 50
+   },
+   {
+      "const" : "EBADE",
+      "desc" : "Invalid exchange",
+      "errno" : 52
+   },
+   {
+      "const" : "EBADR",
+      "desc" : "Invalid request descriptor",
+      "errno" : 53
+   },
+   {
+      "const" : "EXFULL",
+      "desc" : "Exchange full",
+      "errno" : 54
+   },
+   {
+      "const" : "ENOANO",
+      "desc" : "No anode",
+      "errno" : 55
+   },
+   {
+      "const" : "EBADRQC",
+      "desc" : "Invalid request code",
+      "errno" : 56
+   },
+   {
+      "const" : "EBADSLT",
+      "desc" : "Invalid slot",
+      "errno" : 57
+   },
+   {
+      "const" : "EBFONT",
+      "desc" : "Bad font file format",
+      "errno" : 59
+   },
+   {
+      "const" : "ENOSTR",
+      "desc" : "Device not a stream",
+      "errno" : 60
+   },
+   {
+      "const" : "ENODATA",
+      "desc" : "No data available",
+      "errno" : 61
+   },
+   {
+      "const" : "ETIME",
+      "desc" : "Timer expired",
+      "errno" : 62
+   },
+   {
+      "const" : "ENOSR",
+      "desc" : "Out of streams resources",
+      "errno" : 63
+   },
+   {
+      "const" : "ENONET",
+      "desc" : "Machine is not on the network",
+      "errno" : 64
+   },
+   {
+      "const" : "ENOPKG",
+      "desc" : "Package not installed",
+      "errno" : 65
+   },
+   {
+      "const" : "EREMOTE",
+      "desc" : "Object is remote",
+      "errno" : 66
+   },
+   {
+      "const" : "ENOLINK",
+      "desc" : "Link has been severed",
+      "errno" : 67
+   },
+   {
+      "const" : "EADV",
+      "desc" : "Advertise error",
+      "errno" : 68
+   },
+   {
+      "const" : "ESRMNT",
+      "desc" : "Srmount error",
+      "errno" : 69
+   },
+   {
+      "const" : "ECOMM",
+      "desc" : "Communication error on send",
+      "errno" : 70
+   },
+   {
+      "const" : "EPROTO",
+      "desc" : "Protocol error",
+      "errno" : 71
+   },
+   {
+      "const" : "EMULTIHOP",
+      "desc" : "Multihop attempted",
+      "errno" : 72
+   },
+   {
+      "const" : "EDOTDOT",
+      "desc" : "RFS specific error",
+      "errno" : 73
+   },
+   {
+      "const" : "EBADMSG",
+      "desc" : "Not a data message",
+      "errno" : 74
+   },
+   {
+      "const" : "EOVERFLOW",
+      "desc" : "Value too large for defined data type",
+      "errno" : 75
+   },
+   {
+      "const" : "ENOTUNIQ",
+      "desc" : "Name not unique on network",
+      "errno" : 76
+   },
+   {
+      "const" : "EBADFD",
+      "desc" : "File descriptor in bad state",
+      "errno" : 77
+   },
+   {
+      "const" : "EREMCHG",
+      "desc" : "Remote address changed",
+      "errno" : 78
+   },
+   {
+      "const" : "ELIBACC",
+      "desc" : "Can not access a needed shared library",
+      "errno" : 79
+   },
+   {
+      "const" : "ELIBBAD",
+      "desc" : "Accessing a corrupted shared library",
+      "errno" : 80
+   },
+   {
+      "const" : "ELIBSCN",
+      "desc" : ".lib section in a.out corrupted",
+      "errno" : 81
+   },
+   {
+      "const" : "ELIBMAX",
+      "desc" : "Attempting to link in too many shared libraries",
+      "errno" : 82
+   },
+   {
+      "const" : "ELIBEXEC",
+      "desc" : "Cannot exec a shared library directly",
+      "errno" : 83
+   },
+   {
+      "const" : "EILSEQ",
+      "desc" : "Illegal byte sequence",
+      "errno" : 84
+   },
+   {
+      "const" : "ERESTART",
+      "desc" : "Interrupted system call should be restarted",
+      "errno" : 85
+   },
+   {
+      "const" : "ESTRPIPE",
+      "desc" : "Streams pipe error",
+      "errno" : 86
+   },
+   {
+      "const" : "EUSERS",
+      "desc" : "Too many users",
+      "errno" : 87
+   },
+   {
+      "const" : "ENOTSOCK",
+      "desc" : "Socket operation on non-socket",
+      "errno" : 88
+   },
+   {
+      "const" : "EDESTADDRREQ",
+      "desc" : "Destination address required",
+      "errno" : 89
+   },
+   {
+      "const" : "EMSGSIZE",
+      "desc" : "Message too long",
+      "errno" : 90
+   },
+   {
+      "const" : "EPROTOTYPE",
+      "desc" : "Protocol wrong type for socket",
+      "errno" : 91
+   },
+   {
+      "const" : "ENOPROTOOPT",
+      "desc" : "Protocol not available",
+      "errno" : 92
+   },
+   {
+      "const" : "EPROTONOSUPPORT",
+      "desc" : "Protocol not supported",
+      "errno" : 93
+   },
+   {
+      "const" : "ESOCKTNOSUPPORT",
+      "desc" : "Socket type not supported",
+      "errno" : 94
+   },
+   {
+      "const" : "EOPNOTSUPP",
+      "desc" : "Operation not supported on transport endpoint",
+      "errno" : 95
+   },
+   {
+      "const" : "EPFNOSUPPORT",
+      "desc" : "Protocol family not supported",
+      "errno" : 96
+   },
+   {
+      "const" : "EAFNOSUPPORT",
+      "desc" : "Address family not supported by protocol",
+      "errno" : 97
+   },
+   {
+      "const" : "EADDRINUSE",
+      "desc" : "Address already in use",
+      "errno" : 98
+   },
+   {
+      "const" : "EADDRNOTAVAIL",
+      "desc" : "Cannot assign requested address",
+      "errno" : 99
+   },
+   {
+      "const" : "ENETDOWN",
+      "desc" : "Network is down",
+      "errno" : 100
+   },
+   {
+      "const" : "ENETUNREACH",
+      "desc" : "Network is unreachable",
+      "errno" : 101
+   },
+   {
+      "const" : "ENETRESET",
+      "desc" : "Network dropped connection because of reset",
+      "errno" : 102
+   },
+   {
+      "const" : "ECONNABORTED",
+      "desc" : "Software caused connection abort",
+      "errno" : 103
+   },
+   {
+      "const" : "ECONNRESET",
+      "desc" : "Connection reset by peer",
+      "errno" : 104
+   },
+   {
+      "const" : "ENOBUFS",
+      "desc" : "No buffer space available",
+      "errno" : 105
+   },
+   {
+      "const" : "EISCONN",
+      "desc" : "Transport endpoint is already connected",
+      "errno" : 106
+   },
+   {
+      "const" : "ENOTCONN",
+      "desc" : "Transport endpoint is not connected",
+      "errno" : 107
+   },
+   {
+      "const" : "ESHUTDOWN",
+      "desc" : "Cannot send after transport endpoint shutdown",
+      "errno" : 108
+   },
+   {
+      "const" : "ETOOMANYREFS",
+      "desc" : "Too many references: cannot splice",
+      "errno" : 109
+   },
+   {
+      "const" : "ETIMEDOUT",
+      "desc" : "Connection timed out",
+      "errno" : 110
+   },
+   {
+      "const" : "ECONNREFUSED",
+      "desc" : "Connection refused",
+      "errno" : 111
+   },
+   {
+      "const" : "EHOSTDOWN",
+      "desc" : "Host is down",
+      "errno" : 112
+   },
+   {
+      "const" : "EHOSTUNREACH",
+      "desc" : "No route to host",
+      "errno" : 113
+   },
+   {
+      "const" : "EALREADY",
+      "desc" : "Operation already in progress",
+      "errno" : 114
+   },
+   {
+      "const" : "EINPROGRESS",
+      "desc" : "Operation now in progress",
+      "errno" : 115
+   },
+   {
+      "const" : "ESTALE",
+      "desc" : "Stale file handle",
+      "errno" : 116
+   },
+   {
+      "const" : "EUCLEAN",
+      "desc" : "Structure needs cleaning",
+      "errno" : 117
+   },
+   {
+      "const" : "ENOTNAM",
+      "desc" : "Not a XENIX named type file",
+      "errno" : 118
+   },
+   {
+      "const" : "ENAVAIL",
+      "desc" : "No XENIX semaphores available",
+      "errno" : 119
+   },
+   {
+      "const" : "EISNAM",
+      "desc" : "Is a named type file",
+      "errno" : 120
+   },
+   {
+      "const" : "EREMOTEIO",
+      "desc" : "Remote I/O error",
+      "errno" : 121
+   },
+   {
+      "const" : "EDQUOT",
+      "desc" : "Quota exceeded",
+      "errno" : 122
+   },
+   {
+      "const" : "ENOMEDIUM",
+      "desc" : "No medium found",
+      "errno" : 123
+   },
+   {
+      "const" : "EMEDIUMTYPE",
+      "desc" : "Wrong medium type",
+      "errno" : 124
+   },
+   {
+      "const" : "ECANCELED",
+      "desc" : "Operation Canceled",
+      "errno" : 125
+   },
+   {
+      "const" : "ENOKEY",
+      "desc" : "Required key not available",
+      "errno" : 126
+   },
+   {
+      "const" : "EKEYEXPIRED",
+      "desc" : "Key has expired",
+      "errno" : 127
+   },
+   {
+      "const" : "EKEYREVOKED",
+      "desc" : "Key has been revoked",
+      "errno" : 128
+   },
+   {
+      "const" : "EKEYREJECTED",
+      "desc" : "Key was rejected by service",
+      "errno" : 129
+   },
+   {
+      "const" : "EOWNERDEAD",
+      "desc" : "Owner died",
+      "errno" : 130
+   },
+   {
+      "const" : "ENOTRECOVERABLE",
+      "desc" : "State not recoverable",
+      "errno" : 131
+   },
+   {
+      "const" : "ERFKILL",
+      "desc" : "Operation not possible due to RF-kill",
+      "errno" : 132
+   },
+   {
+      "const" : "EHWPOISON",
+      "desc" : "Memory page has hardware error",
+      "errno" : 133
+   }
+]

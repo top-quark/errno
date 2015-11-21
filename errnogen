@@ -1,0 +1,119 @@
+#!/usr/bin/perl
+# Combines JSON files, errno.script and errno.html to produce the finished errno app
+use strict;
+use warnings qw/all/;
+use File::Basename qw/dirname/;
+use JSON;
+use Getopt::Long;
+
+my $workingDir = dirname(__FILE__);
+my $json = JSON->new()->pretty();
+
+my %json = ();
+my %json_d;
+my %html = ();
+my @platforms;
+
+# Scan the inputs looking for the longest fields
+my ($maxN, $maxC, $dh) = (0, 0, undef);
+
+opendir($dh, $workingDir) || die("Can't read $workingDir: $!");
+my @osFiles = grep { /\.json$/ } readdir($dh);
+closedir($dh);
+
+for my $fName (@osFiles) {
+    my ($platform) = ($fName =~ /^([^\.]*)\.json$/);
+    push(@platforms, $platform);
+    my $jsonFile = "$workingDir/$fName";
+    if (open(my $jf, "<", $jsonFile)) {
+        local $/;
+        $json{$platform} = <$jf>;
+        close($jf);
+    }
+    else {
+        die("Unable to open $jsonFile: $!");
+    }
+    my $eList = $json->decode($json{$platform});
+    for my $errInf (@$eList) {
+        if (length($errInf->{errno}) > $maxN) {
+            $maxN = length($errInf->{errno});
+        }
+        if (length($errInf->{const}) > $maxC) {
+            $maxC = length($errInf->{const});
+        }
+    }
+    
+    $json_d{$platform} = $eList;
+}
+# Leave spaces between each field
+$maxN += 2;
+$maxC += 2;
+
+# As we go over @platforms, build up HTML as well as directives to populate
+# Perl hashes in the generated script
+my ($htmlDir, $jsonDir) = ("", "");
+for my $platform (@platforms) {
+    my ($eomj, $eomh) = ($platform."j", $platform."h");
+    $jsonDir .= "\$json{$platform} = <<'eo$eomj';\n!!$eomj!!\neo$eomj\n";
+    $htmlDir .= "\$html{$platform} = <<'eo$eomh';\n!!$eomh!!\neo$eomh\n";
+    my $html = '<div class="hdr">' . pad('#', $maxN) . pad('#define', $maxC) . 
+        'Description</div><div id="txt">';
+    my $eList = $json_d{$platform};
+    for my $errInf (@$eList) {
+        $html .= '<div>' . pad($errInf->{errno}, $maxN) . pad($errInf->{const}, $maxC);
+        # Need to treat descriptions a little more carefully
+        my $desc = $errInf->{desc};
+        $desc =~ s/&/&amp;/g;
+        $desc =~ s/</&lt;/g;
+        $html .= "$desc</div>";
+    }
+    $html .= '</div>';
+    $html{$platform} = $html;
+}
+
+my ($content, $perl);
+my $htmlTemplate = "$workingDir/errno.html";
+if (open(my $template, "<", $htmlTemplate)) {
+    local $/;
+    $content = <$template>;
+    close($template);
+}
+else {
+    die("Unable to open $htmlTemplate: $!");
+}
+my $perlTemplate = "$workingDir/errno.pl.template";
+if (open(my $template, "<", $perlTemplate)) {
+    local $/;
+    $perl = <$template>;
+    close($template);
+}
+else {
+    die("Unable to open $perlTemplate: $!");
+}
+
+# Insert strings into $perl
+$perl =~ s/!!JSOND!!/$jsonDir/;
+$perl =~ s/!!HTMLD!!/$htmlDir/;
+for my $platform (@platforms) {
+    my ($jrep, $htmlrep) = ("!!".$platform."j!!", "!!".$platform."h!!");
+    $perl =~ s/$jrep/$json{$platform}/;
+    $perl =~ s/$htmlrep/$html{$platform}/;
+}
+$perl =~ s/!!HTML!!/$content/;
+
+binmode(STDOUT, ":utf8");
+print($perl);
+
+sub pad {
+    my ($v, $n) = @_;
+    my ($pc, $rem) = ("\x{a0}", $n - length($v));
+    if ($rem > 0) {
+        $v .= ($pc x $rem);  
+    }
+    return $v;
+}
+
+
+
+
+

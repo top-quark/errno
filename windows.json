@@ -1,0 +1,202 @@
+[
+   {
+      "const" : "EPERM",
+      "desc" : "Operation not permitted",
+      "errno" : 1
+   },
+   {
+      "const" : "ENOENT",
+      "desc" : "No such file or directory",
+      "errno" : 2
+   },
+   {
+      "const" : "ESRCH",
+      "desc" : "No such process",
+      "errno" : 3
+   },
+   {
+      "const" : "EINTR",
+      "desc" : "Interrupted system call",
+      "errno" : 4
+   },
+   {
+      "const" : "EIO",
+      "desc" : "I/O error",
+      "errno" : 5
+   },
+   {
+      "const" : "ENXIO",
+      "desc" : "No such device or address",
+      "errno" : 6
+   },
+   {
+      "const" : "E2BIG",
+      "desc" : "Argument list too long",
+      "errno" : 7
+   },
+   {
+      "const" : "ENOEXEC",
+      "desc" : "Exec format error",
+      "errno" : 8
+   },
+   {
+      "const" : "EBADF",
+      "desc" : "Bad file number",
+      "errno" : 9
+   },
+   {
+      "const" : "ECHILD",
+      "desc" : "No spawned processes",
+      "errno" : 10
+   },
+   {
+      "const" : "EAGAIN",
+      "desc" : "No more processes or not enough memory or maximum nesting level reached",
+      "errno" : 11
+   },
+   {
+      "const" : "ENOMEM",
+      "desc" : "Not enough memory",
+      "errno" : 12
+   },
+   {
+      "const" : "EACCES",
+      "desc" : "Permission denied",
+      "errno" : 13
+   },
+   {
+      "const" : "EFAULT",
+      "desc" : "Bad address",
+      "errno" : 14
+   },
+   {
+      "const" : "EBUSY",
+      "desc" : "Device or resource busy",
+      "errno" : 16
+   },
+   {
+      "const" : "EEXIST",
+      "desc" : "File exists",
+      "errno" : 17
+   },
+   {
+      "const" : "EXDEV",
+      "desc" : "Cross-device link",
+      "errno" : 18
+   },
+   {
+      "const" : "ENODEV",
+      "desc" : "No such device",
+      "errno" : 19
+   },
+   {
+      "const" : "ENOTDIR",
+      "desc" : "Not a directory",
+      "errno" : 20
+   },
+   {
+      "const" : "EISDIR",
+      "desc" : "Is a directory",
+      "errno" : 21
+   },
+   {
+      "const" : "EINVAL",
+      "desc" : "Invalid argument",
+      "errno" : 22
+   },
+   {
+      "const" : "ENFILE",
+      "desc" : "Too many files open in system",
+      "errno" : 23
+   },
+   {
+      "const" : "EMFILE",
+      "desc" : "Too many open files",
+      "errno" : 24
+   },
+   {
+      "const" : "ENOTTY",
+      "desc" : "Inappropriate I/O control operation",
+      "errno" : 25
+   },
+   {
+      "const" : "EFBIG",
+      "desc" : "File too large",
+      "errno" : 27
+   },
+   {
+      "const" : "ENOSPC",
+      "desc" : "No space left on device",
+      "errno" : 28
+   },
+   {
+      "const" : "ESPIPE",
+      "desc" : "Invalid seek",
+      "errno" : 29
+   },
+   {
+      "const" : "EROFS",
+      "desc" : "Read-only file system",
+      "errno" : 30
+   },
+   {
+      "const" : "EMLINK",
+      "desc" : "Too many links",
+      "errno" : 31
+   },
+   {
+      "const" : "EPIPE",
+      "desc" : "Broken pipe",
+      "errno" : 32
+   },
+   {
+      "const" : "EDOM",
+      "desc" : "Math argument",
+      "errno" : 33
+   },
+   {
+      "const" : "ERANGE",
+      "desc" : "Result too large",
+      "errno" : 34
+   },
+   {
+      "const" : "EDEADLK",
+      "desc" : "Resource deadlock would occur",
+      "errno" : 36
+   },
+   {
+      "const" : "EDEADLOCK",
+      "desc" : "Same as EDEADLK",
+      "errno" : 36
+   },
+   {
+      "const" : "ENAMETOOLONG",
+      "desc" : "Filename too long",
+      "errno" : 38
+   },
+   {
+      "const" : "ENOLCK",
+      "desc" : "No locks available",
+      "errno" : 39
+   },
+   {
+      "const" : "ENOSYS",
+      "desc" : "Function not supported",
+      "errno" : 40
+   },
+   {
+      "const" : "ENOTEMPTY",
+      "desc" : "Directory not empty",
+      "errno" : 41
+   },
+   {
+      "const" : "EILSEQ",
+      "desc" : "Illegal byte sequence",
+      "errno" : 42
+   },
+   {
+      "const" : "STRUNCATE",
+      "desc" : "String was truncated",
+      "errno" : 80
+   }
+]
