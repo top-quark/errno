@@ -92,6 +92,8 @@ else {
 }
 
 # Insert strings into $perl
+my $server = $ENV{SERVER} || "";
+$perl =~ s/!!SERVER!!/$server/;
 $perl =~ s/!!JSOND!!/$jsonDir/;
 $perl =~ s/!!HTMLD!!/$htmlDir/;
 for my $platform (@platforms) {

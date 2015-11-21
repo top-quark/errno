@@ -3,7 +3,7 @@ A web service providing errno references for a number of operating systems eithe
 
 ## Building
 From the source directory, run:
-<pre>$ make all</pre>
+<pre>$ make server=http://my.server.domain all</pre>
 
 This will generate the webapp, `perl/errno`, and a zip file, `errno.zip` for you to unpack on your webserver. The archive
 contains both the webapp and an image, `images/little_hal.jpg`. The HTML template, `errno.html` assumes that the image will be

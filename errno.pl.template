@@ -29,6 +29,7 @@ my %html;
 !!JSOND!!
 !!HTMLD!!
 
+my $server = "!!SERVER!!";
 my $path = $ENV{SCRIPT_NAME};
 my $ePath = $ENV{PATH_INFO} || "/";
 my @parts = split(/\//, $ePath);

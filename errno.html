@@ -5,6 +5,9 @@
         <title>Errno</title>
         <meta name="viewport" content="width=device-width, initial-scale=0.75">
         <meta name="author" content="Christopher Williams">
+        <meta property="og:url" content="$server$path">
+        <meta property="og:title" content="Errno">
+        <meta property="og:image" content="$server/images/little_hal.jpg">
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"-->
         <style type="text/css">
@@ -27,6 +30,7 @@
             background-origin: border-box;
             background-repeat: no-repeat;
             padding-left: 132px;
+            position: relative;
         }
         .hdr {
             background-color: #444;
@@ -36,6 +40,11 @@
         }
         #txt DIV {
             padding: 0.25em;
+        }
+        .fb-like {
+            position: absolute!important;
+            right: 9.5px;
+            bottom: 9.5px;
         }
         </style>
     </head>
@@ -67,7 +76,10 @@
             or just scroll down the table.</p>
             <p>You are viewing the error codes for $osName; if you want to view the error
             codes for a different operating system, select it from the dropdown menu.</div>
-            <pre class="errno">$html</pre>
+            <pre class="errno">$html<div class="fb-like" 
+            data-href="$server$path" data-width="120" 
+            data-layout="button_count" data-action="like" data-show-faces="true"
+            data-share="true"></div></pre>
             <h2>JSON interface</h2>
             <p>To load the error information as JSON, use:<br>
             <a href="$path/$osId/json">$path/$osId/json</a></p>
@@ -75,7 +87,23 @@
             <p>For JSONP, add a callback value as a query parameter:<br>
             <a href="$path/$osId/json?callback=myCallback">$path/$osId/json?callback=myCallback</a></p>
         </div>
-        <script src="http://code.jquery.com/jquery.js"></script>
+        <div id="fb-root"></div>
+        <script>
+        (function(d, s) {
+            var m = {
+                'facebook-jssdk' : 'connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5'
+            }, pr = (':' === d.location.protocol.charAt(4)) ? 'http' : 'https', id,
+            js, fjs = d.getElementsByTagName(s)[0];
+            for (id in m) {
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = pr + '://' + m[id];
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }
+        })(document, 'script');
+        </script><script src="http://code.jquery.com/jquery.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     </body>
 </html>
