@@ -51,3 +51,5 @@ Copy the json file into your source directory. Edit `errno.pl.template` to add t
 
 Now simply rebuild. The new JSON file will be picked up automatically.
 
+## Try It Out!
+Point your browser at <a href="http://www.usefuljs.net/api/errno" target="_blank">my server</a>.
