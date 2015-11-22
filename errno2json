@@ -18,6 +18,7 @@ while(<$child>) {
         push(@includes, $1);
     } 
 }
+close($child);
 my @errno;
 my %no = ();
 my ($fh, $line);
